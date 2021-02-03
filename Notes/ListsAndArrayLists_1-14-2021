@@ -1,0 +1,44 @@
+
+   //A list is a sequence of objects.
+public interface ListInterface
+   {
+      public boolean isEmpty();
+      public int size();
+      public Object get (int index);
+      public void add (int index, Object obg);
+      public Object remove (int index);
+   }      
+class ArrayList implements ListInterface
+   {
+      Object[] data;
+      int last;
+      final int STARTSIZE = 42;
+      
+      public ArrayList() 
+      {
+         data = new Object[STARTSIZE];
+         last = -1;
+      }
+      public boolean isEmpty()
+      {
+         if (last == -1)
+            return true;   //return (last == -1)
+         else return false;
+      }
+      public int size()
+      {
+         return (last + 1);
+      }
+      public Object get (int index)
+      {
+         if ((index < 0) || (index > last))
+            throw new IndexOutOfBoundsException(); //new code
+         
+         else
+            return data[index];
+      }
+   
+   }
+
+
+
