@@ -85,7 +85,7 @@ class CourseList
    }
    
 /**************************************************************/
-/* Method: getHead */
+/* Method: setHead */
 /* Purpose: Sets the node head */
 /* Parameters: None */
 /* Result: Sets courseHead to point toward the specified node */
