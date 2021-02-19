@@ -69,7 +69,16 @@ class Term
             
          }
       }
-      
+      if (courses.size() - 1 >= 0)  //if the list is bigger than 0
+      {
+         Course lastCourse = courses.get(courses.size() - 1); //the last course of the list
+         String compCode = lastCourse.getCourseCode(); //the last course code
+         
+         if (courseCode.compareTo(compCode) > 0) //if course goes last
+         {
+            courses.addLast(course); //adds course to the end of the list
+         }
+      }
       if (courses.size() <= 0) //if list is empty
       {
          courses.add(0, course);
@@ -101,7 +110,7 @@ class Term
                if (courseCode.equals(compCode)) //if coursecodes match
                {
                   currentCourse.print(); //print the course
-                  courses.remove(index); 
+                  courses.remove(index);
                   courseMatch = true;
                   break;
                   //removes the course and sets courseMatch to true

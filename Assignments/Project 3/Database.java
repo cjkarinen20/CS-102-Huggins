@@ -7,6 +7,8 @@
 /* and calls methods to interact with stored objects */
 /**************************************************************/
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.*;
 
 class Database
@@ -20,11 +22,10 @@ class Database
    
 /**************************************************************/
 /* Method: addTerm */
-/* Purpose: Calls the TermList addTerm method to */
-/* the initial TermList */
+/* Purpose: Adds a new term to the terms list */
 /* Parameters: */
 /* int term: The term number of the term to add */
-/* Result: Adds a new TermNode to the TermList */
+/* Result: Adds a new term object to the list */
 /**************************************************************/
 
    public void addTerm(int term)
@@ -58,7 +59,7 @@ class Database
             Term lastTerm = terms.get(terms.size() - 1); //the last term of the list
             int compareNum = lastTerm.getTermNumber(); //the last term number
          
-            if (term > compareNum) //if parameter term goes before
+            if (term > compareNum) //if parameter term goes last
             {
                terms.addLast(tempTerm); //adds tempTerm to the end of the list
             }
@@ -113,7 +114,7 @@ class Database
 /* Parameters: */
 /* int term: The term that contains the course
 /* String courseCode: Indentifier of course to remove */
-/* Result: 'Removes' CourseNode from the CourseList*/
+/* Result: Removes the course from the database */
 /**************************************************************/
 
    public void removeCourse(int term, String courseCode)
@@ -214,6 +215,7 @@ class Database
    
    public double getGPA()
    {
+      DecimalFormat df = new DecimalFormat("0.00");
       double sum = 0; //the sum of all grades multiplied by course credits
       int totalCredits = 0; //the total number of credits
       
@@ -229,7 +231,7 @@ class Database
          
       }
          sum = (sum / totalCredits); //divides sum by totalCredits
-         return sum; //returns sum
+         return Double.parseDouble(df.format(sum)); //returns sum
    }
    
 }

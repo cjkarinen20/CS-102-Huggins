@@ -105,7 +105,7 @@ public class Prog3
    {
      while (true) //loops infinitely
      {
-      System.out.println("Welcome to the CS-102 Transcript Program"); //welcome message
+      System.out.println("\nWelcome to the CS-102 Transcript Program"); //welcome message
       System.out.println("Current available commands: ");      //display
       System.out.println("1 --> Search by course number");  //input
       System.out.println("2 --> Search by course title");     //options
@@ -155,7 +155,7 @@ public class Prog3
          System.out.println("Please enter the course code: ");//and course code
          String searchCode = scn.nextLine();
          System.out.println("Delete this course? (Y or N): "); //ask user to confirm decision
-         if (scn.nextLine().equals("Y")) //if answer is yes
+         if (scn.nextLine().equals("Y") || scn.nextLine().equals("y")) //if answer is yes
          {
            database.removeCourse(academicTerm, searchCode); //call to database remove method
          }
@@ -171,7 +171,7 @@ public class Prog3
          System.out.println("Please enter the course code: ");//and course code
          String searchCode = scn.nextLine();
          System.out.println("Edit this course? (Y or N): ");
-         if (scn.nextLine().equals("Y")) //if answer is yes
+         if (scn.nextLine().equals("Y") || scn.nextLine().equals("y")) //if answer is yes
          {
            database.removeCourse(academicTerm, searchCode); //call to database remove method
            System.out.println("Please enter the course year (YYYYTT): ");    //Prompt user
