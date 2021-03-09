@@ -134,7 +134,7 @@ class CourseList
    
 /**************************************************************/
 /* Method: searchByTitle */
-/* Purpose: Searches for a given keyword and prints the matches */
+/* Purpose: Searches for a given keyword and prints the matches*/
 /* Parameters: */
 /* String: searchTerm: The given keyword to search for
 /* Result: The specified course is printed*/
